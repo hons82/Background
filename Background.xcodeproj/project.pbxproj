@@ -13,6 +13,7 @@
 		FBEF61ED2401092D005860C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEF61EC2401092D005860C8 /* Assets.xcassets */; };
 		FBEF61F02401092D005860C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEF61EF2401092D005860C8 /* Preview Assets.xcassets */; };
 		FBEF61F32401092D005860C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBEF61F12401092D005860C8 /* LaunchScreen.storyboard */; };
+		FBEF61FD24014DEA005860C8 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBEF61FC24014DEA005860C8 /* UserNotifications.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		FBEF61EF2401092D005860C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FBEF61F22401092D005860C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBEF61F42401092D005860C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBEF61FA24014DD3005860C8 /* Background.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Background.entitlements; sourceTree = "<group>"; };
+		FBEF61FC24014DEA005860C8 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBEF61FD24014DEA005860C8 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 			children = (
 				FBEF61E524010927005860C8 /* Background */,
 				FBEF61E424010927005860C8 /* Products */,
+				FBEF61FB24014DEA005860C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +61,7 @@
 		FBEF61E524010927005860C8 /* Background */ = {
 			isa = PBXGroup;
 			children = (
+				FBEF61FA24014DD3005860C8 /* Background.entitlements */,
 				FBEF61E624010927005860C8 /* AppDelegate.swift */,
 				FBEF61E824010927005860C8 /* SceneDelegate.swift */,
 				FBEF61EA24010927005860C8 /* ContentView.swift */,
@@ -73,6 +79,14 @@
 				FBEF61EF2401092D005860C8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FBEF61FB24014DEA005860C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBEF61FC24014DEA005860C8 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +230,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Background/Background.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Background/Preview Content\"";
 				DEVELOPMENT_TEAM = QWP2E983M5;
@@ -304,6 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Background/Background.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Background/Preview Content\"";
 				DEVELOPMENT_TEAM = QWP2E983M5;

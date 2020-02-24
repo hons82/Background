@@ -10,7 +10,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        Button(action: {
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            appDelegate?.scheduleNotification(notificationType: "Local Notification with Action")
+        }){
+            Text("Send internal Notification")
+        }
     }
 }
 
